@@ -209,15 +209,30 @@
         footer div ul li{
           list-style: none;
         }
+        #top{
+          height: 50px;
+          width: 50px;
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background-color: var(--primary-bg);
+          color: var(--text-color);
+          padding: 10px;
+          border-radius: 50%;
+          text-decoration: none;
+          font-size: 24px;
+          box-shadow: var(--box-shadow);
+        }
     </style>
 </head>
 <body>
-    <header>
+    <header id="head">
         <div>
         <h1>Ajit Mehta</h1>
         <h2>Web Developer</h2>
         </div>
         <img src="tree.png" alt="Profile Image">
+        <a id="top" href="#head">&uArr;</a>
     </header>
     <nav>
         <a href="#about">About</a>
