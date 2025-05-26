@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajit Mehta - Porfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poetsen+One&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+          --primary-bg: #86d8f8;
+          --header-footer-bg: rgba(255, 255, 255, 0.127);
+          --text-color: #000000;
+          --hover-color: rgb(68, 0, 255);
+          --box-shadow: 2px 1px 10px rgba(0, 0, 0, 0.327);
+          --input-bg: rgba(255, 255, 255, 0.445);
+        }
+
+        *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-weight: bold;
+        }
+        body{
+          font-family: 'Lato', sans-serif;
+          background-color: var(--primary-bg);
+          padding: 2% 10%;
+        }
+        header{
+          padding: 10px;
+          text-align: center;
+          color: var(--text-color);
+          display: flex;
+          justify-content: flex-end;
+          flex-wrap: wrap;
+          gap: 20px;
+        }
+        header div{
+          text-align: right;
+        }
+        header img{
+          width: 100px;
+          height: 100px;
+          border-radius: 50% 0 50% 0;
+          margin: 0 0 20px 0;
+          box-shadow: var(--box-shadow);
+        }
+        header h1 {
+          font-size: 50px;
+        }
+        nav{
+          background-color: var(--header-footer-bg);
+          display: flex;
+          justify-content: flex-end;
+          padding: 15px;
+          margin-bottom: 20px;
+          box-shadow: var(--box-shadow);
+          border-radius: 10px;
+          flex-wrap: wrap;
+          gap: 20px;
+        }
+        nav a{
+          text-decoration: none;
+          color: var(--text-color);
+          font-size: 25px;
+          transition: color 1s;
+        }
+        nav a:hover{
+          color: var(--hover-color);
+        }
+        #grid-container{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        @media (min-width: 750px){
+          #grid-container #about, #grid-container #form{
+            grid-column: 1/3;
+          }
+        }
+        @media (max-width: 750px){
+          #grid-container{
+            grid-template-columns: 1fr;
+          }
+        }
+        @media (max-width: 500px){
+          body{
+            padding: 0;
+          }
+          #form form {
+            min-width: 100%;
+          }
+          footer div ul{
+            min-width: 100%;
+          }
+        }
+        section{
+          box-shadow: var(--box-shadow);
+          border-radius: 10px;
+          padding: 35px;
+          transition: all 0.3s ease-in-out;
+        }
+        section:hover{
+          transform: translateY(-10px);
+          box-shadow: 4px 2px 20px rgba(0, 0, 0, 0.5);
+          border-radius: 20px;
+          padding: 30px;
+        }
+        #about{         
+          color: var(--text-color);
+          font-size: 20px;
+          line-height: 2rem;
+        }
+        #skill div{
+          color: var(--text-color);
+          font-size: 20px;
+        }
+        #skill ol li{
+          margin: 15px;
+        }
+        #project{
+          color: var(--text-color);
+          font-size: 20px;
+          line-height: 2rem;
+        }
+        #form form{
+          width: 80%;
+          max-width: 400px;
+          padding: 35px;
+          color: var(--text-color);
+          margin: auto;
+          font-size: 20px;
+          line-height: 2rem;
+          box-shadow: var(--box-shadow);
+          border-radius: 10px;
+        }
+        #form form label {
+          display: block;
+        }
+        #form form input{
+          margin-bottom: 10px;
+        }
+        #form form textarea{
+          margin-bottom: 10px;
+        }
+        #form form input, #form form textarea {
+          width: 80%;
+          padding: 5px;
+          border: none;
+          background: var(--input-bg);
+          box-shadow: var(--box-shadow);
+          border-radius: 5px;
+          color: var(--text-color);
+        }
+        #form form button{
+          padding: 5px 10px 5px 10px;
+          font-size: 1.2em;
+          float: right;
+          margin-top: 17px;
+          background-color: var(--primary-bg);
+          border: none;
+          box-shadow: var(--box-shadow);
+          border-radius: 5px;
+          color: var(--text-color);
+          cursor: pointer;
+        }
+        footer{
+          text-align: center;
+          color: var(--text-color);
+          margin: 20px 0;
+        }
+        footer div ul{
+          width: 80%;
+          margin: 10px auto;
+          padding: 10px 30px;
+          display: flex;
+          justify-content: space-around;
+          box-shadow: var(--box-shadow);
+          border-radius: 10px;
+          flex-wrap: wrap;
+          gap: 20px;
+        }
+        footer div ul li a{
+          text-decoration: none;
+          color: var(--text-color);
+          transition: color 1s;
+        }
+        footer div ul li a i {
+          transition: color 0.4s, transform 0.4s;
+        }
+        footer div ul li a:hover .fa-youtube {
+          color: #FF0000;
+          transform: scale(1.2) rotate(-10deg);
+        }
+        footer div ul li a:hover .fa-github {
+          color: #333333;
+          transform: scale(1.2) rotate(-10deg);
+        }
+        footer div ul li a:hover .fa-envelope {
+          color: #0072c6;
+          transform: scale(1.2) rotate(-10deg);
+        }
+        footer div ul li{
+          list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+        <h1>Ajit Mehta</h1>
+        <h2>Web Developer</h2>
+        </div>
+        <img src="tree.png" alt="Profile Image">
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skill">Skills</a>
+        <a href="#project">Projects</a>
+        <a href="#form">Contanct</a>
+    </nav>
+    <div id="grid-container">
+        <section id="about">
+            <div>
+              <h1>About Me</h1>
+            <p>Hello! I'm Ajit Mehta, a passionate web developer with a love for creating clean, responsive, and user-friendly websites. I enjoy turning ideas into reality through code and constantly learning new technologies to improve my skills.</p>
+            </div>
+        </section>
+        <section id="skill">
+          <div>
+            <h1>Skills</h1>
+            <ol>
+                <li>HTML 5</li>
+                <li>CSS 3</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+            </ol>
+          </div>
+        </section>
+        <section id="project">
+            <div>
+              <h1>Project 1: Personal Blog</h1>
+            <p>A responsive personal blog built using HTML, CSS. It features a clean design and supports dynamic content loading.</p>
+            <br>
+            <h1>Project 2: E-Commerce Website</h1>
+            <p>An e-commerce platform developed with React.js and Node.js. It includes user authentication, product listings, and a shopping cart.</p>
+            </div>
+        </section>
+        <section id="form">
+          <form>
+            <h1>Message Me</h1>
+            <label for="Name">Name:</label>
+            <input id="Name" type="text" placeholder="Your Name">
+            <label for="email">Email:</label>
+            <input id="email" type="email" placeholder="Email">
+            <label for="message">Message:</label>
+            <textarea id="message" placeholder="Send Your Message..."></textarea>
+            <button type="submit">Submit</button>
+          </form>
+        </section>
+    </div>
+    <footer>
+      <h1>My Useful Links</h1>
+      <div id="link">
+        <ul>
+          <li>
+            <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+          </li>
+          <li>
+            <a href="https://github.com/its-Ajit" target="_blank"><i class="fab fa-github"></i></a>
+          </li>
+          <li>
+            <a href="mailto:gallery.krshn@gmail.com"><i class="fas fa-envelope"></i></a>
+          </li>
+        </ul>
+      </div>
+      <p>&copy; 2025 Ajit Mehta. All rights reserved</p>
+    </footer>
+</body>
+</html>
