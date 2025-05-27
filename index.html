@@ -67,29 +67,22 @@
         nav a{
           text-decoration: none;
           color: var(--text-color);
-          font-size: 25px;
+          font-size: 20px;
+          font-weight: 800;
           transition: color 1s;
         }
         nav a:hover{
           color: var(--hover-color);
         }
-        #grid-container{
+        #container{
             width: 100%;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
             gap: 40px;
         }
-        @media (min-width: 750px){
-          #grid-container #about, #grid-container #form{
-            grid-column: 1/3;
-          }
-        }
-        @media (max-width: 750px){
-          #grid-container{
-            grid-template-columns: 1fr;
-          }
-        }
-        @media (max-width: 500px){
+        
+        @media (max-width: 600px){
           body{
             padding: 0;
           }
@@ -128,6 +121,15 @@
           color: var(--text-color);
           font-size: 20px;
           line-height: 2rem;
+        }
+        #project a{
+          text-decoration: none;
+          color: white;
+          font-weight: bold;
+          transition: color 1s;
+        }
+        #project a:hover{
+          color: var(--hover-color);
         }
         #form form{
           width: 80%;
@@ -209,7 +211,7 @@
         footer div ul li{
           list-style: none;
         }
-        #top{
+        #top {
           height: 50px;
           width: 50px;
           position: fixed;
@@ -222,6 +224,102 @@
           text-decoration: none;
           font-size: 24px;
           box-shadow: var(--box-shadow);
+        }
+        #top:hover {
+          background-color: var(--hover-color);
+          color: #fff;
+        }
+        #skill {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          flex-wrap: wrap;
+          padding: 0 ;
+          overflow: hidden;
+        }
+        #skill h1{
+          color: var(--text-color);
+          font-size: 30px;
+          margin: 20px;
+        }
+        .skillcards {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          background-color: var(--header-footer-bg);
+          gap: 30px;
+          box-shadow: var(--box-shadow);
+          padding: 20px;
+          width: 100%;
+        }
+        .skillcard {
+          width: 300px;
+          height: 400px;
+          background-color: var(--primary-bg);
+          border-radius: 10px;
+          box-shadow: var(--box-shadow);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          transition: transform 0.3s ease-in-out;
+        }
+        .skillcard:hover {
+          transform: translateY(-10px);
+          box-shadow: 4px 2px 20px rgba(0, 0, 0, 0.5);
+        }
+        .cardnumber {
+          height: 50px;
+          width: 50px;
+          background-color: rgba(54, 171, 248, 0.979);
+          border-radius: 50%;
+          position: absolute;
+          top: -5px;
+          left: -5px;
+          color: var(--text-color);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 24px;
+          font-weight: 1000;
+          box-shadow: var(--box-shadow);
+          z-index: 1;
+        }
+        .card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          overflow: hidden;
+        }
+        .card::before{
+          content: '';
+          height: 100%;
+          width: 50%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: rgba(115, 197, 245, 0.274);
+        }
+        .cardicon {
+          font-size: 50px;
+          color: var(--text-color);
+          margin-bottom: 20px;
+        }
+        .cardicon i{
+          font-size: 4.5em;
+        }
+        .cardicon .fa-html5 {
+          color: #E34F26;
+        }
+        .cardicon .fa-css3-alt {
+          color: #1572B6;
+        }
+        .cardicon .fa-js {
+          color: #F7DF1E;
         }
     </style>
 </head>
@@ -240,7 +338,7 @@
         <a href="#project">Projects</a>
         <a href="#form">Contanct</a>
     </nav>
-    <div id="grid-container">
+    <div id="container">
         <section id="about">
             <div>
               <h1>About Me</h1>
@@ -248,19 +346,50 @@
             </div>
         </section>
         <section id="skill">
-          <div>
             <h1>Skills</h1>
-            <ol>
-                <li>HTML 5</li>
-                <li>CSS 3</li>
-                <li>JavaScript</li>
-                <li>Python</li>
-            </ol>
-          </div>
+            <div class="skillcards">
+              <div class="skillcard">
+                <div class="cardnumber">1</div>
+                <div class="card">
+                  <div class="cardicon">
+                    <i class="fab fa-html5"></i>
+                  </div>
+                  <div class="carddetails">
+                    <h1>HTML 5</h1>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+              <div class="skillcard">
+                <div class="cardnumber">2</div>
+                <div class="card">
+                  <div class="cardicon">
+                    <i class="fab fa-css3-alt"></i>
+                  </div>
+                  <div class="carddetails">
+                    <h1>CSS 3</h1>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+              <div class="skillcard">
+                <div class="cardnumber">3</div>
+                <div class="card">
+                  <div class="cardicon">
+                    <i class="fab fa-js"></i>
+                  </div>
+                  <div class="carddetails">
+                    <h1>JS</h1>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
         </section>
         <section id="project">
             <div>
-              <h1>Project 1: Personal Blog</h1>
+              <h1>Project 1: <a href="Project/Education/Shine Academy/Index.html" target="_blank">Shine Academy</a>
+              </h1>
             <p>A responsive personal blog built using HTML, CSS. It features a clean design and supports dynamic content loading.</p>
             <br>
             <h1>Project 2: E-Commerce Website</h1>
