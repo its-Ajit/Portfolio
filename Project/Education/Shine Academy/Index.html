@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shine Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poetsen+One&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #86d8f8;
+            --section-bg: #f0f8ff;
+            --card-bg: #ffffff;
+            --profile-bg: #f9f9f9;
+            --text-main: #000000;
+            --text-dark: #333;
+            --text-mid: #666;
+            --text-light: #999;
+            --highlight: #ffe066;
+            --highlight2: #ffd700;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+        /* nav */
+        .logo img {
+            height: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .logo img:hover {
+            transform: scale(1.1);
+        }
+        .logo {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+        /* nav */
+        /* header */
+        section#header {
+            margin: auto;
+            width: 80vw;
+            height: 30vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            text-align: right;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        section#header h1 {
+            font-size: clamp(2em, 8vw, 10em);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: "Poetsen One", sans-serif;
+        }
+        section#header h1 i {
+            display: none;
+        }
+        section#header h1:hover i {
+            display: inline;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        section#header h1 i:hover {
+            color: var(--highlight);
+            text-shadow: 0 0 15px var(--highlight), 0 0 30px var(--highlight2);
+            cursor: pointer;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        section#header p {
+            font-size: clamp(0.8em, 4vw, 2em);
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            align-self: flex-end;
+            margin-right: 0;
+        }
+        /* header */
+        /* specialist */
+        section#specialist {
+            padding: 50px 20px;
+            background-color: var(--section-bg);
+            text-align: center;
+        }
+        .college-section .college-title-wrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .college-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        .college-years {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .college-year {
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .specialist-section{
+            margin: 20px auto;
+            width: 80vw;
+            max-width: 1200px;
+            padding: 20px;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .specialist-header {
+            margin-bottom: 20px;
+        }
+        .specialist-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--text-dark);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        .profilecards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .profile {
+            background-color: var(--profile-bg);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .profileimage {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            border-radius: 10px;
+        }
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+        .profiledetails {
+            padding: 20px;
+        }
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+        .profile-qualification {
+            font-size: 1.2rem;
+            color: var(--text-mid);
+            margin-bottom: 10px;
+        }
+        .profile-expertise {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+        .specialist-description {
+            text-align: left;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        .expirience {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding-left: 20px;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        .expirience ul {
+            text-align: left;
+            list-style-type: square;
+            padding: 0;
+        }
+        .expirience li {
+            margin-bottom: 10px;
+        }
+        /* specialist */
+        /* offer */
+        .offer {
+            background-color: var(--section-bg);
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        .offer-banner, .offer-content {
+            width: 400px;
+            height: 400px;
+            display: flex;
+            overflow: hidden;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .offer-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .offer-banner img:hover {
+            transform: scale(1.05);
+        }
+        .offer-content {
+            flex-direction: column;
+            justify-content: center;
+            background-color: var(--card-bg);
+            text-align: left;
+        }
+        .offer-content h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+        .offer-content p {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+        /* offer */
+        /* contact */
+        .contect {
+            background-color: var(--section-bg);
+            padding: 50px 20px;
+            text-align: left;
+            display: flex;
+            justify-content: center;
+        }
+        .contect-info {
+            width: 600px;
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .contect-info h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+        .contect-info h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+        .contect-info p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        /* contact */
+        /* footer */
+        footer {
+            background-color: #8a3c3c00;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        footer h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        footer p {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2rem;
+        }
+        footer .fab {
+            margin: 0 10px;
+            font-size: 1.5rem;
+            color: #ffffff;
+            transition: color 0.3s ease;
+        }
+        footer .fa-facebook-f:hover {
+            color: #002fff;
+        }
+        footer .fa-twitter:hover {
+            color: #00acee;
+        }
+        footer .fa-instagram:hover {
+            color: #e1306c;
+        }
+        /* footer */
+        
+        
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <a href="#header">
+            <img src="images/logo.png" alt="Shine Academy Logo">
+        </a>
+    </div>
+    <section id="header">
+        <h1><i class="fa-regular fa-lightbulb" title="Click Me"></i>SHINE ACADEMY</h1>
+        <p>Education is a journey not a race...</p>
+    </section>
+    <section id="specialist" >
+        <div class="college-section">
+            <div class="college-title-wrapper">
+                <h2 class="college-title">COLLEGE <i class="fa-solid fa-graduation-cap"></i></h2>
+            </div>
+            <div class="college-years">
+                <h3 class="college-year">F.Y.J.C</h3>
+                <h3 class="college-year">S.Y.J.C</h3>
+            </div>
+        </div>
+        <div class="specialist-section">
+            <div class="specialist-header">
+                <h2 class="specialist-title">Specialist in Accounting</h2>
+            </div>
+            <div class="profilecards">
+                <div class="profile">
+                    <div class="profileimage">
+                        <img class="profile-img" src="images/accounting1.jpg" alt="Accounting Specialist">
+                    </div>
+                    <div class="profiledetails">
+                        <h2 class="profile-name">Prof. Nalini Shukla</h2>
+                        <h4 class="profile-qualification">(M.Com, B.Ed)</h4>
+                        <p class="profile-expertise">Expert in Accounts</p>
+                    </div>
+                </div>
+                <div class="profile">
+                    <div class="profileimage">
+                        <img class="profile-img" src="images/accounting1.jpg" alt="Accounting Specialist">
+                    </div>
+                    <div class="profiledetails">
+                        <h2 class="profile-name">Prof. Neha Bansal</h2>
+                        <h4 class="profile-qualification">(M.Com, B.Ed)</h4>
+                        <p class="profile-expertise">Expert in Accounts</p>
+                    </div>
+                </div>
+            </div>
+            <div class="expirience">
+                <ul>
+                    <li>Specialist in Account with 10 years of Experience.</li>
+                    <li>Well Experienced & Qualified faculty</li>
+                </ul>
+            </div>
+            <div class="specialist-description">
+                <p class="specialist-text">At Shine Academy, we take pride in being specialists in accounting. Our team of experienced educators is dedicated to providing you with the best possible learning experience. We understand that accounting can be a complex subject, but our expert instructors break down even the most challenging topics into easy-to-understand concepts.</p>
+            </div>
+        </div>
+    </section>
+    <section class="offer">
+        <div class="offer-banner">
+            <div>
+                <img src="images/Offer.png" alt="offers image">
+            </div>
+        </div>
+        <div class="offer-content">
+            <div>
+                <h2>Special Offers</h2>
+                <p>Come and feel the difference that commerce is no more a tough stream</p>
+                <p>Enroll now and start your journey towards success!</p>
+            </div>
+        </div>
+    </section>
+    <section class="contect">
+        <div class="contect-info">
+            <h1>Grab Offer Now</h1>
+            <h2>Contact Us</h2>
+            <p>For inquiries, please reach out to us at:</p>
+            <p>+91 55555 99999</p>
+            <p>+91 55555 99999</p>
+            <p> Mail us:- shineacademy@email.com</p>
+        </div>
+    </section>
+    <footer>
+        <h3>Address:</h3>
+        <p>Shine Academy, 1234 Education Lane, Knowledge City, State, 56789</p>
+        <p>&copy; 2025 Shine Academy. All rights reserved.</p>
+        <p>Follow us on:
+            <a href="#" class="fab fa-facebook-f" title="Facebook"></a>
+            <a href="#" class="fab fa-twitter" title="Twitter"></a>
+            <a href="#" class="fab fa-instagram" title="Instagram"></a>
+        </p>
+    </footer>
+    <script>
+        document.querySelector('.logo img').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        document.querySelector('h1 i').addEventListener('click', function() {
+            alert('Welcome to Shine Academy! Your journey to success starts here.');
+        });
+    </script>
+</body>
+</html>
